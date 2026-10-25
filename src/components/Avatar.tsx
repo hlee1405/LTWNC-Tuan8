@@ -7,7 +7,7 @@ export function Avatar({
   name: string;
   role?: "admin" | "user";
   size?: number;
-  src?: string;
+  src?: string | null;
 }) {
   const getInitials = (str: string) => {
     const parts = str.trim().split(" ");

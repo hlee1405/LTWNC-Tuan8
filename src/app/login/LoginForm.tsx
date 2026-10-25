@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { loginWithCredentialsAction, loginWithGithubAction, type AuthActionResult } from "@/app/actions/auth-actions";
+import { loginWithCredentialsAction, type AuthActionResult } from "@/app/actions/auth-actions";
 
 export function LoginForm({ callbackUrl }: { callbackUrl?: string }) {
   const [email, setEmail] = useState("admin@example.com");
@@ -135,39 +135,7 @@ export function LoginForm({ callbackUrl }: { callbackUrl?: string }) {
           className="btn btn-primary"
           style={{ width: "100%", padding: "10px" }}
         >
-          {isPending ? "Đang xác thực..." : "Đăng nhập bằng Email/Mật khẩu"}
-        </button>
-      </form>
-
-      {/* DIVIDER */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "12px",
-          marginBottom: "16px",
-          color: "var(--text-muted)",
-          fontSize: "0.75rem",
-          textTransform: "uppercase",
-        }}
-      >
-        <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border-light)" }} />
-        <span>Hoặc</span>
-        <div style={{ flex: 1, height: "1px", backgroundColor: "var(--border-light)" }} />
-      </div>
-
-      {/* GITHUB OAUTH FORM */}
-      <form action={loginWithGithubAction}>
-        <button
-          type="submit"
-          className="btn btn-secondary"
-          style={{
-            width: "100%",
-            padding: "9px",
-            fontSize: "0.875rem",
-          }}
-        >
-          Đăng nhập với GitHub OAuth
+          {isPending ? "Đang xác thực..." : "Đăng nhập"}
         </button>
       </form>
     </div>
